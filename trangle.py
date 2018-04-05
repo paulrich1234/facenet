@@ -1,0 +1,12 @@
+z=tf.subtract(eye_1,nose)
+p=tf.subtract(eye_2,nose)
+a=z[0]*p[0]+z[1]*p[1]
+sess=tf.InteractiveSession()
+a1=a.eval()
+p1=p.eval()
+z1=z.eval()
+b=np.sqrt(z1[0]**2+z1[1]**2)
+c=np.sqrt(p1[0]**2+p1[1]**2)
+cos=a1/(b*c)
+pi=math.acos(cos)
+print('angle of deflection :%f'% math.degrees(pi))
